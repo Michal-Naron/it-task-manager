@@ -34,6 +34,8 @@ class Position(models.Model):
         choices=NAME_CHOICES
     )
 
+    def __str__(self):
+        return self.get_name_display()
 
 class Worker(AbstractUser):
     position = models.ForeignKey(
