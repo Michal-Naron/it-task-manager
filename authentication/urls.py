@@ -8,4 +8,4 @@ urlpatterns = [
     # path('logout', LogoutView.as_view(), name="logout")
 ]
 
-app_name = "accounts"
+app_name = "authentication"
