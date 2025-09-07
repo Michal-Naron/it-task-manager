@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views import generic
@@ -44,3 +44,8 @@ class RegisterView(generic.CreateView):
                 context["msg"] = 'User created - please <a href="/login">login</a>.'
 
         return context
+
+
+def logout_view(request):
+    logout(request)
+    return redirect("authentication:login")
