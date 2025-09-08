@@ -20,7 +20,7 @@ def login_view(request):
 
             if user is not None:
                 login(request, user)
-                return redirect("/")
+                return redirect("/home")
             else:
                 msg = "Invalid credentials"
         else:
@@ -48,4 +48,4 @@ class RegisterView(generic.CreateView):
 
 def logout_view(request):
     logout(request)
-    return redirect("authentication:login")
+    return redirect("workflows:index")
