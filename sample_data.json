@@ -1,0 +1,221 @@
+[
+  {
+    "model": "workflows.position",
+    "pk": 1,
+    "fields": { "name": "developer" }
+  },
+  {
+    "model": "workflows.position",
+    "pk": 2,
+    "fields": { "name": "project_manager" }
+  },
+  {
+    "model": "workflows.position",
+    "pk": 3,
+    "fields": { "name": "qa" }
+  },
+  {
+    "model": "workflows.position",
+    "pk": 4,
+    "fields": { "name": "designer" }
+  },
+  {
+    "model": "workflows.position",
+    "pk": 5,
+    "fields": { "name": "devops" }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 1,
+    "fields": {
+      "username": "alice",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "alice@example.com",
+      "position": 1,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 2,
+    "fields": {
+      "username": "bob",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "bob@example.com",
+      "position": 2,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 3,
+    "fields": {
+      "username": "carol",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "carol@example.com",
+      "position": 3,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.tasktype",
+    "pk": 1,
+    "fields": { "name": "bug" }
+  },
+  {
+    "model": "workflows.tasktype",
+    "pk": 2,
+    "fields": { "name": "new_feature" }
+  },
+  {
+    "model": "workflows.tasktype",
+    "pk": 3,
+    "fields": { "name": "breaking_change" }
+  },
+  {
+    "model": "workflows.tasktype",
+    "pk": 4,
+    "fields": { "name": "refactoring" }
+  },
+  {
+    "model": "workflows.tasktype",
+    "pk": 5,
+    "fields": { "name": "qa" }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 1,
+    "fields": {
+      "name": "Fix login bug",
+      "description": "Users cannot login under certain conditions.",
+      "deadline": "2025-09-15T12:00:00Z",
+      "is_completed": false,
+      "priority": "high",
+      "task_type": 1,
+      "assignees": [1, 2]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 2,
+    "fields": {
+      "name": "Add registration page",
+      "description": "Create a new registration page with validation.",
+      "deadline": "2025-09-20T12:00:00Z",
+      "is_completed": false,
+      "priority": "medium",
+      "task_type": 2,
+      "assignees": [2, 3]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 3,
+    "fields": {
+      "name": "Refactor task model",
+      "description": "Improve performance of Task queries.",
+      "deadline": "2025-09-25T12:00:00Z",
+      "is_completed": false,
+      "priority": "low",
+      "task_type": 4,
+      "assignees": [1, 3]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 4,
+    "fields": {
+      "name": "QA testing for login",
+      "description": "Perform regression tests on login feature.",
+      "deadline": "2025-09-18T09:00:00Z",
+      "is_completed": false,
+      "priority": "urgent",
+      "task_type": 5,
+      "assignees": [3]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 5,
+    "fields": {
+      "name": "Prepare release notes",
+      "description": "Summarize features and bug fixes for release 1.2.",
+      "deadline": "2025-09-22T10:00:00Z",
+      "is_completed": true,
+      "priority": "low",
+      "task_type": 3,
+      "assignees": [2]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 6,
+    "fields": {
+      "name": "UI redesign for dashboard",
+      "description": "Improve dashboard usability and layout.",
+      "deadline": "2025-09-28T15:00:00Z",
+      "is_completed": false,
+      "priority": "high",
+      "task_type": 2,
+      "assignees": [1, 3]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 7,
+    "fields": {
+      "name": "Optimize database queries",
+      "description": "Reduce slow queries in reports section.",
+      "deadline": "2025-09-30T17:00:00Z",
+      "is_completed": false,
+      "priority": "urgent",
+      "task_type": 4,
+      "assignees": [1, 2]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 8,
+    "fields": {
+      "name": "Design new landing page",
+      "description": "Create wireframes and UI mockups for new landing page.",
+      "deadline": "2025-10-02T11:00:00Z",
+      "is_completed": false,
+      "priority": "medium",
+      "task_type": 2,
+      "assignees": [3]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 9,
+    "fields": {
+      "name": "Server monitoring setup",
+      "description": "Configure monitoring tools for production servers.",
+      "deadline": "2025-10-05T08:00:00Z",
+      "is_completed": false,
+      "priority": "high",
+      "task_type": 3,
+      "assignees": [2]
+    }
+  },
+  {
+    "model": "workflows.task",
+    "pk": 10,
+    "fields": {
+      "name": "Automated test coverage",
+      "description": "Increase unit test coverage to 80% across modules.",
+      "deadline": "2025-10-07T09:30:00Z",
+      "is_completed": false,
+      "priority": "urgent",
+      "task_type": 5,
+      "assignees": [1, 3]
+    }
+  }
+]
