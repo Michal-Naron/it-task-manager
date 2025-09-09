@@ -14,7 +14,7 @@
         </thead>
         <tbody>
         {% for worker in worker_list %}
-          <tr>
+          <tr onclick="window.location='{% url 'workflows:worker-detail' pk=worker.pk %}'" style="cursor:pointer;">
             <td>{{ worker.username }}</td>
             <td>{{ worker.position }}</td>
             <td>{{ worker.email }}</td>

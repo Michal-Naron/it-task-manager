@@ -21,6 +21,11 @@ class WorkersViewList(LoginRequiredMixin, generic.ListView):
     template_name = "workers_list.html"
 
 
+class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Worker
+    template_name = 'worker-detail.html'
+
+
 class TasksViewList(LoginRequiredMixin, generic.ListView):
     model = Task
     template_name = "task-list.html"
