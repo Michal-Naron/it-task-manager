@@ -5,7 +5,8 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import TaskForm, FilterTask
-from .models import Worker, Task
+from .models import Worker, Task, Project
+
 
 def index_view(request) -> HTTPResponse:
     return render(request, "index.html")
@@ -102,4 +103,9 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Task
     template_name = "task-delete.html"
     success_url = reverse_lazy("workflows:tasks-list")
+
+
+class MyProjectsListView(LoginRequiredMixin, generic.ListView):
+    model = Project
+    template_name = "my-project-list.html"
 

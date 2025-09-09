@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Projects</h2>
+
+  <div class="row">
+    {% for project in object_list %}
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100 project-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text text-muted">
+              Teams assigned: {{ project.teams.count }}
+            </p>
+            <a href="{% url 'workflows:project-detail' project.pk %}" class="btn btn-primary mt-auto">
+              View details
+            </a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center">No projects found.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
