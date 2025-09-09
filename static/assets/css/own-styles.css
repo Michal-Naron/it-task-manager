@@ -111,3 +111,24 @@
     color: #666;
 }
 
+/* Styl dla kart projektów */
+.project-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.project-card .card-title {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.project-card .btn {
+  border-radius: 20px;
+}
+
+
