@@ -86,7 +86,9 @@ class Task(models.Model):
     project = models.ForeignKey(
         Project,
         related_name="tasks",
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
     )
 
     def __str__(self):
