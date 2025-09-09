@@ -1,3 +1,5 @@
+from random import choices
+
 from django import forms
 from django.forms import (
     Textarea,
@@ -52,3 +54,23 @@ class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = '__all__'
+
+
+class FilterTask(forms.Form):
+    DEADLINE_CHOICES = [
+        ('asc', 'Deadline ↑ (earliest first)'),
+        ('desc', 'Deadline ↓ (latest first)'),
+    ]
+
+    priority = forms.ChoiceField(
+        choices= [('', '--------')] + Task.PRIORITY_CHOICES,
+        required=False
+    )
+    deadline = forms.ChoiceField(
+        choices= [('', '--------')] + DEADLINE_CHOICES,
+        required=False
+    )
+    task_type = forms.ModelChoiceField(
+        queryset=TaskType.objects.all(),
+        required=False
+    )
