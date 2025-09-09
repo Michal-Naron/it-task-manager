@@ -50,6 +50,21 @@ class Worker(AbstractUser):
         return f"{self.username} Position: {self.position}"
 
 
+class Team(models.Model):
+    name = models.CharField(max_length=255)
+    assignees = models.ManyToManyField("Worker", related_name="teams")
+
+    def __str__(self):
+        return self.name
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=255)
+    teams = models.ManyToManyField(Team, related_name="projects")
+
+    def __str__(self):
+        return self.name
+
 class Task(models.Model):
     PRIORITY_CHOICES = [
         ('urgent', 'Urgent'),
@@ -68,6 +83,11 @@ class Task(models.Model):
     )
     task_type = models.ForeignKey(TaskType, on_delete=models.CASCADE)
     assignees = models.ManyToManyField(Worker, related_name='tasks')
+    project = models.ForeignKey(
+        Project,
+        related_name="tasks",
+        on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return f"{self.name} deadline: {self.deadline} priority: {self.get_priority_display()}"
