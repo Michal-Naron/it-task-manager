@@ -134,3 +134,7 @@ class ProjectDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'project-detail.html'
 
 
+class TeamDetailView(LoginRequiredMixin,generic.DetailView):
+    model = Team
+    template_name = "team-detail.html"
+

@@ -15,7 +15,7 @@
               <li>{{ worker.username }} <small class="text-muted">({{ worker.position }})</small></li>
             {% endfor %}
           </ul>
-          <a href="" class="btn btn-sm btn-primary mt-2">
+          <a href="{% url 'workflows:team-detail' pk=team.pk %}" class="btn btn-sm btn-primary mt-2">
             View Details
           </a>
         </div>
