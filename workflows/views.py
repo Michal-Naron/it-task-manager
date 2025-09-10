@@ -5,7 +5,7 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import TaskForm, FilterTask
-from .models import Worker, Task, Project
+from .models import Worker, Task, Project, Team
 
 
 def index_view(request) -> HTTPResponse:
@@ -109,3 +109,7 @@ class MyProjectsListView(LoginRequiredMixin, generic.ListView):
     model = Project
     template_name = "my-project-list.html"
 
+
+class MyTeamsListView(LoginRequiredMixin, generic.ListView):
+    model = Team
+    template_name = "my-team-list.html"
