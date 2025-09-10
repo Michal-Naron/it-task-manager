@@ -58,6 +58,7 @@ class TaskForm(forms.ModelForm):
         widget=Select(attrs={'class': 'form-select form-select-lg'})
     )
 
+
     class Meta:
         model = Task
         fields = '__all__'
@@ -83,8 +84,6 @@ class FilterTask(forms.Form):
     )
 
 
-
-
 class ProjectForm(forms.ModelForm):
     name = forms.CharField(
         widget=forms.TextInput(
@@ -97,6 +96,25 @@ class ProjectForm(forms.ModelForm):
         widget=CheckboxSelectMultiple()
     )
 
+
     class Meta:
         model = Project
+        fields = "__all__"
+
+
+class TeamForm(forms.ModelForm):
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Name",
+                "class": "form-control form-control-lg", }
+        ))
+    assignees = forms.ModelMultipleChoiceField(
+        queryset=Worker.objects.all(),
+        widget=CheckboxSelectMultiple()
+    )
+
+
+    class Meta:
+        model = Team
         fields = "__all__"

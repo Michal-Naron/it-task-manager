@@ -13,7 +13,8 @@ from .views import (
     WorkerDetailView,
     MyProjectsListView,
     MyTeamsListView,
-    ProjectCreateView
+    ProjectCreateView,
+    TeamCreateView
 )
 
 urlpatterns = [
@@ -29,7 +30,8 @@ urlpatterns = [
     path('home/<int:pk>/worker/', WorkerDetailView.as_view(), name='worker-detail'),
     path('home/my-projects/', MyProjectsListView.as_view(), name='my-project-list'),
     path('home/my-teams/', MyTeamsListView.as_view(), name='my-team-list'),
-    path('home/project-create/', ProjectCreateView.as_view(), name='project-create')
+    path('home/project-create/', ProjectCreateView.as_view(), name='project-create'),
+    path('home/team-create/', TeamCreateView.as_view(), name='team-create')
 ]
 
 app_name = 'workflows'
