@@ -42,6 +42,8 @@ class TasksViewList(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["search_form"] = FilterTask
+        if self.request.GET:
+            context["search_form"] = FilterTask(self.request.GET)
         return context
 
     def get_queryset(self):
@@ -89,6 +91,8 @@ class MyTasksViewList(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["search_form"] = FilterTask
+        if self.request.GET:
+            context["search_form"] = FilterTask(self.request.GET)
         return context
 
 
