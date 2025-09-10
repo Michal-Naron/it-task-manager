@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import TaskForm, FilterTask
+from .forms import TaskForm, FilterTask, ProjectForm
+from .mixins import ProjectManagerRequiredMixin
 from .models import Worker, Task, Project, Team
 
 
@@ -113,3 +114,9 @@ class MyProjectsListView(LoginRequiredMixin, generic.ListView):
 class MyTeamsListView(LoginRequiredMixin, generic.ListView):
     model = Team
     template_name = "my-team-list.html"
+
+
+class ProjectCreateView(ProjectManagerRequiredMixin, generic.CreateView):
+    model = Project
+    template_name = "project-create.html"
+    form_class = ProjectForm

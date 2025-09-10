@@ -11,7 +11,10 @@ from django.forms import (
 from .models import (
     Task,
     TaskType,
-    Worker, Project)
+    Worker,
+    Project,
+    Team
+)
 
 class TaskForm(forms.ModelForm):
     name = forms.CharField(
@@ -78,3 +81,22 @@ class FilterTask(forms.Form):
         queryset=TaskType.objects.all(),
         required=False
     )
+
+
+
+
+class ProjectForm(forms.ModelForm):
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Name",
+                "class": "form-control form-control-lg",}
+        ))
+    teams = forms.ModelMultipleChoiceField(
+        queryset=Team.objects.all(),
+        widget=CheckboxSelectMultiple()
+    )
+
+    class Meta:
+        model = Project
+        fields = "__all__"

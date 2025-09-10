@@ -12,7 +12,8 @@ from .views import (
     TaskDeleteView,
     WorkerDetailView,
     MyProjectsListView,
-    MyTeamsListView
+    MyTeamsListView,
+    ProjectCreateView
 )
 
 urlpatterns = [
@@ -27,7 +28,8 @@ urlpatterns = [
     path('home/<int:pk>/task-delete/', TaskDeleteView.as_view(), name='task-delete'),
     path('home/<int:pk>/worker/', WorkerDetailView.as_view(), name='worker-detail'),
     path('home/my-projects/', MyProjectsListView.as_view(), name='my-project-list'),
-    path('home/my-teams/', MyTeamsListView.as_view(), name='my-team-list')
+    path('home/my-teams/', MyTeamsListView.as_view(), name='my-team-list'),
+    path('home/project-create/', ProjectCreateView.as_view(), name='project-create')
 ]
 
 app_name = 'workflows'
