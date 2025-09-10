@@ -128,3 +128,9 @@ class TeamCreateView(ProjectManagerRequiredMixin, generic.CreateView):
     form_class = TeamForm
     success_url = reverse_lazy("workflows:home-view")
 
+
+class ProjectDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Project
+    template_name = 'project-detail.html'
+
+

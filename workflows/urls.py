@@ -14,7 +14,8 @@ from .views import (
     MyProjectsListView,
     MyTeamsListView,
     ProjectCreateView,
-    TeamCreateView
+    TeamCreateView,
+    ProjectDetailView
 )
 
 urlpatterns = [
@@ -31,7 +32,8 @@ urlpatterns = [
     path('home/my-projects/', MyProjectsListView.as_view(), name='my-project-list'),
     path('home/my-teams/', MyTeamsListView.as_view(), name='my-team-list'),
     path('home/project-create/', ProjectCreateView.as_view(), name='project-create'),
-    path('home/team-create/', TeamCreateView.as_view(), name='team-create')
+    path('home/team-create/', TeamCreateView.as_view(), name='team-create'),
+    path('home/<int:pk>/project/', ProjectDetailView.as_view(), name='project-detail')
 ]
 
 app_name = 'workflows'

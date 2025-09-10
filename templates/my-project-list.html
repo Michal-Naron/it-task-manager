@@ -13,7 +13,7 @@
             <p class="card-text text-muted">
               Teams assigned: {{ project.teams.count }}
             </p>
-            <a href="" class="btn btn-primary mt-auto">
+            <a href="{% url 'workflows:project-detail' pk=project.pk %}" class="btn btn-primary mt-auto">
               View details
             </a>
           </div>
