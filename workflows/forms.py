@@ -78,8 +78,8 @@ class FilterTask(forms.Form):
         choices= [('', '--------')] + DEADLINE_CHOICES,
         required=False
     )
-    task_type = forms.ModelChoiceField(
-        queryset=TaskType.objects.all(),
+    task_type = forms.ChoiceField(
+        choices= [('', '--------')] + TaskType.NAME_CHOICES,
         required=False
     )
 
