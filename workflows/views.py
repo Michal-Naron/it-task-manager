@@ -67,7 +67,7 @@ class TasksViewList(LoginRequiredMixin, generic.ListView):
 class TaskViewCreate(LoginRequiredMixin, generic.CreateView):
     model = Task
     form_class = TaskForm
-    template_name = 'task-create.html'
+    template_name = 'task-create-&-update.html'
     success_url = reverse_lazy("workflows:tasks-list")
 
 
@@ -96,7 +96,7 @@ class MyTasksViewList(LoginRequiredMixin, generic.ListView):
 class TaskUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Task
     form_class = TaskForm
-    template_name = "task-update.html"
+    template_name = "task-create-&-update.html"
     success_url = reverse_lazy("workflows:tasks-list")
 
 
