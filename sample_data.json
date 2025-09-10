@@ -64,6 +64,97 @@
     }
   },
   {
+    "model": "workflows.worker",
+    "pk": 4,
+    "fields": {
+      "username": "dave",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "dave@example.com",
+      "position": 1,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 5,
+    "fields": {
+      "username": "eve",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "eve@example.com",
+      "position": 4,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 6,
+    "fields": {
+      "username": "frank",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "frank@example.com",
+      "position": 3,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 7,
+    "fields": {
+      "username": "grace",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "grace@example.com",
+      "position": 2,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 8,
+    "fields": {
+      "username": "heidi",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "heidi@example.com",
+      "position": 1,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 9,
+    "fields": {
+      "username": "ivan",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "ivan@example.com",
+      "position": 5,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "workflows.worker",
+    "pk": 10,
+    "fields": {
+      "username": "judy",
+      "password": "pbkdf2_sha256$260000$dummy$hash",
+      "email": "judy@example.com",
+      "position": 4,
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
     "model": "workflows.tasktype",
     "pk": 1,
     "fields": { "name": "bug" }
@@ -89,6 +180,54 @@
     "fields": { "name": "qa" }
   },
   {
+    "model": "workflows.team",
+    "pk": 1,
+    "fields": {
+      "name": "Backend Team",
+      "assignees": [1, 2, 4, 6]
+    }
+  },
+  {
+    "model": "workflows.team",
+    "pk": 2,
+    "fields": {
+      "name": "Frontend Team",
+      "assignees": [3, 5, 8, 10]
+    }
+  },
+  {
+    "model": "workflows.team",
+    "pk": 3,
+    "fields": {
+      "name": "QA Team",
+      "assignees": [6, 7, 9]
+    }
+  },
+  {
+    "model": "workflows.project",
+    "pk": 1,
+    "fields": {
+      "name": "Website Redesign",
+      "teams": [2]
+    }
+  },
+  {
+    "model": "workflows.project",
+    "pk": 2,
+    "fields": {
+      "name": "Mobile App",
+      "teams": [1]
+    }
+  },
+  {
+    "model": "workflows.project",
+    "pk": 3,
+    "fields": {
+      "name": "QA Automation",
+      "teams": [3]
+    }
+  },
+  {
     "model": "workflows.task",
     "pk": 1,
     "fields": {
@@ -98,7 +237,8 @@
       "is_completed": false,
       "priority": "high",
       "task_type": 1,
-      "assignees": [1, 2]
+      "assignees": [1, 2],
+      "project": 2
     }
   },
   {
@@ -111,7 +251,8 @@
       "is_completed": false,
       "priority": "medium",
       "task_type": 2,
-      "assignees": [2, 3]
+      "assignees": [2, 3],
+      "project": 2
     }
   },
   {
@@ -124,98 +265,36 @@
       "is_completed": false,
       "priority": "low",
       "task_type": 4,
-      "assignees": [1, 3]
+      "assignees": [1, 3, 4],
+      "project": 1
     }
   },
   {
     "model": "workflows.task",
     "pk": 4,
     "fields": {
-      "name": "QA testing for login",
+      "name": "QA testing login",
       "description": "Perform regression tests on login feature.",
       "deadline": "2025-09-18T09:00:00Z",
       "is_completed": false,
       "priority": "urgent",
       "task_type": 5,
-      "assignees": [3]
+      "assignees": [6, 7],
+      "project": 3
     }
   },
   {
     "model": "workflows.task",
     "pk": 5,
     "fields": {
-      "name": "Prepare release notes",
-      "description": "Summarize features and bug fixes for release 1.2.",
-      "deadline": "2025-09-22T10:00:00Z",
-      "is_completed": true,
-      "priority": "low",
-      "task_type": 3,
-      "assignees": [2]
-    }
-  },
-  {
-    "model": "workflows.task",
-    "pk": 6,
-    "fields": {
-      "name": "UI redesign for dashboard",
+      "name": "UI redesign dashboard",
       "description": "Improve dashboard usability and layout.",
       "deadline": "2025-09-28T15:00:00Z",
       "is_completed": false,
       "priority": "high",
       "task_type": 2,
-      "assignees": [1, 3]
-    }
-  },
-  {
-    "model": "workflows.task",
-    "pk": 7,
-    "fields": {
-      "name": "Optimize database queries",
-      "description": "Reduce slow queries in reports section.",
-      "deadline": "2025-09-30T17:00:00Z",
-      "is_completed": false,
-      "priority": "urgent",
-      "task_type": 4,
-      "assignees": [1, 2]
-    }
-  },
-  {
-    "model": "workflows.task",
-    "pk": 8,
-    "fields": {
-      "name": "Design new landing page",
-      "description": "Create wireframes and UI mockups for new landing page.",
-      "deadline": "2025-10-02T11:00:00Z",
-      "is_completed": false,
-      "priority": "medium",
-      "task_type": 2,
-      "assignees": [3]
-    }
-  },
-  {
-    "model": "workflows.task",
-    "pk": 9,
-    "fields": {
-      "name": "Server monitoring setup",
-      "description": "Configure monitoring tools for production servers.",
-      "deadline": "2025-10-05T08:00:00Z",
-      "is_completed": false,
-      "priority": "high",
-      "task_type": 3,
-      "assignees": [2]
-    }
-  },
-  {
-    "model": "workflows.task",
-    "pk": 10,
-    "fields": {
-      "name": "Automated test coverage",
-      "description": "Increase unit test coverage to 80% across modules.",
-      "deadline": "2025-10-07T09:30:00Z",
-      "is_completed": false,
-      "priority": "urgent",
-      "task_type": 5,
-      "assignees": [1, 3]
+      "assignees": [1, 3, 8],
+      "project": 1
     }
   }
 ]
