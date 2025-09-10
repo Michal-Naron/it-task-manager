@@ -1,5 +1,5 @@
 """
-ASGI config for IT_Task_Manager project.
+ASGI config for it_task_manager project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IT_Task_Manager.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'it_task_manager.settings')
 
 application = get_asgi_application()
