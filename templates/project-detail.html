@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg rounded-4 p-4 mb-4">
+    <h2 class="mb-4 text-center">{{ project.name }}</h2>
+
+    <h4>Teams</h4>
+    {% for team in project.teams.all %}
+      <div class="card mb-3 p-3 shadow-sm">
+        <h5 class="mb-2">{{ team.name }}</h5>
+        <p><strong>Members:</strong>
+          {% for worker in team.assignees.all %}
+            {{ worker.username }} ({{ worker.position }}){% if not forloop.last %}, {% endif %}
+          {% empty %}
+            No members
+          {% endfor %}
+        </p>
+      </div>
+    {% empty %}
+      <p class="text-muted">No teams assigned to this project.</p>
+    {% endfor %}
+
+    <h4>Tasks</h4>
+    {% for task in project.tasks.all %}
+      <div class="card mb-3 p-3 shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">{{ task.name }}</h5>
+          {% if task.is_completed %}
+            <span class="badge bg-success">Completed</span>
+          {% else %}
+            <span class="badge bg-warning text-dark">Pending</span>
+          {% endif %}
+        </div>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Deadline:</strong> {{ task.deadline|date:"Y-m-d H:i" }}</p>
+        <p><strong>Priority:</strong> {{ task.get_priority_display }}</p>
+        <p><strong>Type:</strong> {{ task.task_type }}</p>
+        <p><strong>Assignees:</strong>
+          {% for worker in task.assignees.all %}
+            {{ worker.username }}{% if not forloop.last %}, {% endif %}
+          {% empty %}
+            No assignees
+          {% endfor %}
+        </p>
+      </div>
+    {% empty %}
+      <p class="text-muted">No tasks assigned to this project.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

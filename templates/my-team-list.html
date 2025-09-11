@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">My Teams</h2>
+
+  <div class="row">
+    {% for team in user.teams.all %}
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-lg rounded-4 p-4 h-100">
+          <h4 class="mb-3">{{ team.name }}</h4>
+          <p><strong>Members:</strong></p>
+          <ul class="list-unstyled">
+            {% for worker in team.assignees.all %}
+              <li>{{ worker.username }} <small class="text-muted">({{ worker.position }})</small></li>
+            {% endfor %}
+          </ul>
+          <a href="{% url 'workflows:team-detail' pk=team.pk %}" class="btn btn-sm btn-primary mt-2">
+            View Details
+          </a>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-muted text-center">You are not assigned to any team yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

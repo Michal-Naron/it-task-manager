@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="worker-profile">
+    <div class="profile-card">
+        <div class="avatar avatar-xl rounded-circle">
+                <img src="/static/img/default-user.jpg" alt="{{ worker.username }}">
+        </div>
+        <div class="profile-info">
+            <h2>{{ worker.username }}</h2>
+            <p><strong>Email:</strong> {{ worker.email }}</p>
+            <p><strong>Position:</strong> {{ worker.position }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Workers List</h2>
+  <div class="card shadow-lg rounded-3">
+    <div class="card-body p-4">
+      <table class="table table-hover table-striped align-middle text-center">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Position</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for worker in worker_list %}
+          <tr onclick="window.location='{% url 'workflows:worker-detail' pk=worker.pk %}'" style="cursor:pointer;">
+            <td>{{ worker.username }}</td>
+            <td>{{ worker.position }}</td>
+            <td>{{ worker.email }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}
