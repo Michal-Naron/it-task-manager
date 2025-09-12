@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'it-task-manager.urls'
+ROOT_URLCONF = 'it_task_manager.urls'
 
 TEMPLATES = [
     {
