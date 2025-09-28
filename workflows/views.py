@@ -113,6 +113,11 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 class MyProjectsListView(LoginRequiredMixin, generic.ListView):
     model = Project
     template_name = "my-project-list.html"
+    context_object_name = 'projects'
+
+    def get_queryset(self):
+        user_teams = self.request.user.teams.all()
+        return Project.objects.filter(teams__in=user_teams).distinct()
 
 
 class MyTeamsListView(LoginRequiredMixin, generic.ListView):
