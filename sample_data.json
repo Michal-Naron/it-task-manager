@@ -27,132 +27,27 @@
   {
     "model": "workflows.worker",
     "pk": 1,
-    "fields": {
-      "username": "alice",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "alice@example.com",
-      "position": 1,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
+    "fields": { "username": "alice", "password": "pbkdf2_sha256$260000$dummy$hash", "email": "alice@example.com", "position": 1, "is_staff": false, "is_superuser": false, "is_active": true }
   },
   {
     "model": "workflows.worker",
     "pk": 2,
-    "fields": {
-      "username": "bob",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "bob@example.com",
-      "position": 2,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
+    "fields": { "username": "bob", "password": "pbkdf2_sha256$260000$dummy$hash", "email": "bob@example.com", "position": 2, "is_staff": false, "is_superuser": false, "is_active": true }
   },
   {
     "model": "workflows.worker",
     "pk": 3,
-    "fields": {
-      "username": "carol",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "carol@example.com",
-      "position": 3,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
+    "fields": { "username": "carol", "password": "pbkdf2_sha256$260000$dummy$hash", "email": "carol@example.com", "position": 3, "is_staff": false, "is_superuser": false, "is_active": true }
   },
   {
     "model": "workflows.worker",
-    "pk": 4,
-    "fields": {
-      "username": "dave",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "dave@example.com",
-      "position": 1,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
+    "pk": 11,
+    "fields": { "username": "michael_developer", "password": "MichaelDev@2025!", "email": "michael@example.com", "position": 1, "is_staff": false, "is_superuser": false, "is_active": true }
   },
   {
     "model": "workflows.worker",
-    "pk": 5,
-    "fields": {
-      "username": "eve",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "eve@example.com",
-      "position": 4,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
-  },
-  {
-    "model": "workflows.worker",
-    "pk": 6,
-    "fields": {
-      "username": "frank",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "frank@example.com",
-      "position": 3,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
-  },
-  {
-    "model": "workflows.worker",
-    "pk": 7,
-    "fields": {
-      "username": "grace",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "grace@example.com",
-      "position": 2,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
-  },
-  {
-    "model": "workflows.worker",
-    "pk": 8,
-    "fields": {
-      "username": "heidi",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "heidi@example.com",
-      "position": 1,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
-  },
-  {
-    "model": "workflows.worker",
-    "pk": 9,
-    "fields": {
-      "username": "ivan",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "ivan@example.com",
-      "position": 5,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
-  },
-  {
-    "model": "workflows.worker",
-    "pk": 10,
-    "fields": {
-      "username": "judy",
-      "password": "pbkdf2_sha256$260000$dummy$hash",
-      "email": "judy@example.com",
-      "position": 4,
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
+    "pk": 12,
+    "fields": { "username": "john_project_manager", "password": "JohnProjMgr#2025!", "email": "john@example.com", "position": 2, "is_staff": false, "is_superuser": false, "is_active": true }
   },
   {
     "model": "workflows.tasktype",
@@ -182,119 +77,66 @@
   {
     "model": "workflows.team",
     "pk": 1,
-    "fields": {
-      "name": "Backend Team",
-      "assignees": [1, 2, 4, 6]
-    }
+    "fields": { "name": "Backend Team", "assignees": [1, 2, 11] }
   },
   {
     "model": "workflows.team",
     "pk": 2,
-    "fields": {
-      "name": "Frontend Team",
-      "assignees": [3, 5, 8, 10]
-    }
+    "fields": { "name": "Frontend Team", "assignees": [3] }
   },
   {
     "model": "workflows.team",
     "pk": 3,
-    "fields": {
-      "name": "QA Team",
-      "assignees": [6, 7, 9]
-    }
+    "fields": { "name": "QA Team", "assignees": [3] }
+  },
+  {
+    "model": "workflows.team",
+    "pk": 4,
+    "fields": { "name": "Michael Team", "assignees": [11] }
+  },
+  {
+    "model": "workflows.team",
+    "pk": 5,
+    "fields": { "name": "John Team", "assignees": [12] }
   },
   {
     "model": "workflows.project",
     "pk": 1,
-    "fields": {
-      "name": "Website Redesign",
-      "teams": [2]
-    }
+    "fields": { "name": "Website Redesign", "teams": [2] }
   },
   {
     "model": "workflows.project",
     "pk": 2,
-    "fields": {
-      "name": "Mobile App",
-      "teams": [1]
-    }
+    "fields": { "name": "Mobile App", "teams": [1] }
   },
   {
     "model": "workflows.project",
-    "pk": 3,
-    "fields": {
-      "name": "QA Automation",
-      "teams": [3]
-    }
+    "pk": 4,
+    "fields": { "name": "New Website", "teams": [4] }
+  },
+  {
+    "model": "workflows.project",
+    "pk": 5,
+    "fields": { "name": "Client App", "teams": [5] }
   },
   {
     "model": "workflows.task",
     "pk": 1,
-    "fields": {
-      "name": "Fix login bug",
-      "description": "Users cannot login under certain conditions.",
-      "deadline": "2025-09-15T12:00:00Z",
-      "is_completed": false,
-      "priority": "high",
-      "task_type": 1,
-      "assignees": [1, 2],
-      "project": 2
-    }
+    "fields": { "name": "Fix login bug", "description": "Users cannot login under certain conditions.", "deadline": "2025-09-15T12:00:00Z", "is_completed": false, "priority": "high", "task_type": 1, "assignees": [1, 2], "project": 2 }
   },
   {
     "model": "workflows.task",
     "pk": 2,
-    "fields": {
-      "name": "Add registration page",
-      "description": "Create a new registration page with validation.",
-      "deadline": "2025-09-20T12:00:00Z",
-      "is_completed": false,
-      "priority": "medium",
-      "task_type": 2,
-      "assignees": [2, 3],
-      "project": 2
-    }
+    "fields": { "name": "Add registration page", "description": "Create a new registration page with validation.", "deadline": "2025-09-20T12:00:00Z", "is_completed": false, "priority": "medium", "task_type": 2, "assignees": [2, 3], "project": 2 }
   },
   {
     "model": "workflows.task",
     "pk": 3,
-    "fields": {
-      "name": "Refactor task model",
-      "description": "Improve performance of Task queries.",
-      "deadline": "2025-09-25T12:00:00Z",
-      "is_completed": false,
-      "priority": "low",
-      "task_type": 4,
-      "assignees": [1, 3, 4],
-      "project": 1
-    }
+    "fields": { "name": "Implement login feature", "description": "Develop login functionality for the new website.", "deadline": "2025-10-05T12:00:00Z", "is_completed": false, "priority": "high", "task_type": 2, "assignees": [11], "project": 4 }
   },
   {
     "model": "workflows.task",
     "pk": 4,
-    "fields": {
-      "name": "QA testing login",
-      "description": "Perform regression tests on login feature.",
-      "deadline": "2025-09-18T09:00:00Z",
-      "is_completed": false,
-      "priority": "urgent",
-      "task_type": 5,
-      "assignees": [6, 7],
-      "project": 3
-    }
-  },
-  {
-    "model": "workflows.task",
-    "pk": 5,
-    "fields": {
-      "name": "UI redesign dashboard",
-      "description": "Improve dashboard usability and layout.",
-      "deadline": "2025-09-28T15:00:00Z",
-      "is_completed": false,
-      "priority": "high",
-      "task_type": 2,
-      "assignees": [1, 3, 8],
-      "project": 1
-    }
+    "fields": { "name": "Plan project timeline", "description": "Define milestones and deliverables for client app.", "deadline": "2025-10-10T12:00:00Z", "is_completed": false, "priority": "medium", "task_type": 4, "assignees": [12], "project": 5 }
   }
 ]
